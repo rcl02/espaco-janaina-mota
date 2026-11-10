@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://espaco-janaina-mota.pages.dev/sitemap.xml
