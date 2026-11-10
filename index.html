@@ -76,7 +76,7 @@
 @font-face{font-family:'Cormorant Garamond';src:url(assets/fonts/cormorant-garamond-italic.woff2) format('woff2');font-weight:400 500;font-style:italic;font-display:swap}
 @font-face{font-family:'Jost';src:url(assets/fonts/jost.woff2) format('woff2');font-weight:300 600;font-display:swap}
 @font-face{font-family:'Pinyon Script';src:url(assets/fonts/pinyon-script.woff2) format('woff2');font-weight:400;font-display:swap}
-:root{--cream:#faf5f0;--nude:#f1e4da;--blush:#e7cfc6;--rose:#c98f88;--wine:#6b2a2a;--wine-d:#4d1c1c;--gold:#b8924f;--gold-l:#d9bc85;--ink:#2e2220;--muted:#7a6863;--r:18px}
+:root{--cream:#faf5f0;--nude:#f1e4da;--blush:#e7cfc6;--rose:#c98f88;--wine:#6b2a2a;--wine-d:#4d1c1c;--gold:#b8924f;--gold-l:#d9bc85;--ink:#2e2220;--taupe:#7a6863;--r:18px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Jost',system-ui,sans-serif;font-weight:300;color:var(--ink);background:var(--cream);line-height:1.7;overflow-x:hidden}
@@ -107,10 +107,10 @@ section{padding:110px 0}
 .logo .mono .m{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:.92em}
 .logo .tag{display:flex;align-items:center;gap:.6em;font-family:'Jost';font-weight:400;font-size:.13em;letter-spacing:.3em;margin-top:.35em;white-space:nowrap}
 .logo .tag::before,.logo .tag::after{content:"";width:2.2em;height:1px;background:currentColor;opacity:.7}
-.gold-text{background:linear-gradient(135deg,#a77d38,#e2c88f 45%,#b8924f 70%,#8f6a2c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold-text{color:var(--gold)}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(250,245,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,146,79,.2)}
+header{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid rgba(184,146,79,.2)}
 .nav{height:84px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav .logo{font-size:46px}
 .nav ul{display:flex;gap:34px;list-style:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400}
@@ -124,19 +124,19 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,245,240,.94);backdro
 .hero::before{content:"";position:absolute;right:-8%;top:0;width:52%;height:100%;background:var(--nude);z-index:-1}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
 .hero h1{font-size:clamp(2.8rem,6vw,5.2rem);margin:22px 0 24px;font-weight:400}
-.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:520px}
+.hero p.lead{font-size:1.12rem;color:var(--taupe);max-width:520px}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
 .rating{display:inline-flex;align-items:center;gap:14px;margin-top:40px;padding:14px 20px;background:#fff;border:1px solid rgba(184,146,79,.25);border-radius:999px}
 .rating b{font-family:'Cormorant Garamond';font-size:2.1rem;font-weight:600;color:var(--wine-d);line-height:1}
 .stars{color:#e0a82e;letter-spacing:2px;font-size:1rem}
-.rating small{display:block;color:var(--muted);font-size:.82rem}
+.rating small{display:block;color:var(--taupe);font-size:.82rem}
 .hero-photo{position:relative}
 .hero-photo .frame{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:220px 220px var(--r) var(--r)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
 .hero-photo::after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);border-radius:220px 220px var(--r) var(--r);z-index:-1}
-.hero-photo .sig{position:absolute;left:-36px;bottom:40px;background:#fff;padding:18px 24px;box-shadow:0 20px 50px rgba(77,28,28,.12);border-radius:var(--r)}
+.hero-photo .sig{position:absolute;left:-36px;bottom:40px;background:#fff;padding:18px 24px;border:1px solid rgba(184,146,79,.35);border-radius:var(--r)}
 .hero-photo .sig strong{font-family:'Pinyon Script';font-size:2rem;font-weight:400;color:var(--wine);display:block;line-height:1.1}
-.hero-photo .sig span{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.hero-photo .sig span{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:56px}.hero::before{width:100%;height:46%;top:auto;bottom:0;right:0}.hero-photo{max-width:440px;margin-inline:auto;width:100%}.hero-photo .sig{left:-8px}}
 
 /* proof bar */
@@ -151,9 +151,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,245,240,.94);backdro
 .about .pics{position:relative;padding-bottom:70px}
 .about .pics img:first-of-type{width:82%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r)}
 .about .pics img:last-of-type{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:1;object-fit:cover;border:8px solid var(--cream);border-radius:var(--r)}
-.about .pics .cap{position:absolute;right:0;bottom:-34px;font-size:.75rem;color:var(--muted);letter-spacing:.06em;width:48%;text-align:center}
+.about .pics .cap{position:absolute;right:0;bottom:-34px;font-size:.75rem;color:var(--taupe);letter-spacing:.06em;width:48%;text-align:center}
 .about h2{margin:18px 0 24px}
-.about p{color:var(--muted);margin-bottom:16px;font-size:1.04rem}
+.about p{color:var(--taupe);margin-bottom:16px;font-size:1.04rem}
 .quote{margin:30px 0;padding:6px 0 6px 26px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond';font-style:italic;font-size:1.55rem;line-height:1.35;color:var(--wine)}
 .pillars{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
 .pillars div{display:flex;gap:12px;align-items:flex-start;font-weight:400}
@@ -164,8 +164,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,245,240,.94);backdro
 .treat{background:#fff}
 .center{text-align:center;max-width:680px;margin:0 auto 64px}
 .center h2{margin:16px 0 16px}
-.center p{color:var(--muted)}
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.center p{color:var(--taupe)}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.tcol.star{flex-direction:row;margin-bottom:28px}
+.tcol.star img{width:46%;aspect-ratio:auto;min-height:100%}
 .tcol{background:var(--cream);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
 .tcol img{width:100%;aspect-ratio:16/11;object-fit:cover}
 .tcol .bd{padding:30px 30px 34px;flex:1}
@@ -174,39 +176,39 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,245,240,.94);backdro
 .tcol ul{list-style:none}
 .tcol li{padding:11px 0;border-bottom:1px solid rgba(107,42,42,.1);display:flex;justify-content:space-between;gap:10px;font-weight:400}
 .tcol li:last-child{border:none}
-.tcol li small{color:var(--muted);font-weight:300;font-size:.82rem;text-align:right}
+.tcol li small{color:var(--taupe);font-weight:300;font-size:.82rem;text-align:right}
 .tcol.star{background:var(--wine-d);color:#f3e4dc}
 .tcol.star h3{color:#fff}.tcol.star li{border-color:rgba(255,255,255,.12)}.tcol.star li small{color:#d9c0b6}
-.note{text-align:center;margin-top:34px;color:var(--muted);font-size:.9rem}
-@media(max-width:960px){.tgrid{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+.note{text-align:center;margin-top:34px;color:var(--taupe);font-size:.9rem}
+@media(max-width:960px){.tgrid{grid-template-columns:1fr;max-width:560px;margin-inline:auto}.tcol.star{flex-direction:column;max-width:560px;margin-inline:auto}.tcol.star img{width:100%;aspect-ratio:16/11}}
 
 /* results */
 .results .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.results figure{background:#fff;padding:10px;border-radius:var(--r);box-shadow:0 12px 34px rgba(77,28,28,.07)}
+.results figure{margin:0}
 .results figure img{width:100%;aspect-ratio:1;object-fit:cover}
 .results figcaption{padding:14px 6px 6px;font-family:'Cormorant Garamond';font-size:1.3rem;color:var(--wine-d);font-weight:500}
-.results figcaption small{display:block;font-family:'Jost';font-size:.78rem;color:var(--muted);letter-spacing:.06em}
-.disc{margin-top:26px;text-align:center;font-size:.82rem;color:var(--muted)}
+.results figcaption small{display:block;font-family:'Jost';font-size:.78rem;color:var(--taupe);letter-spacing:.06em}
+.disc{margin-top:26px;text-align:center;font-size:.82rem;color:var(--taupe)}
 @media(max-width:960px){.results .rgrid{grid-template-columns:1fr 1fr}}
 
 /* method */
 .method{background:var(--nude)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:s}
-.step{position:relative;padding-top:20px}
-.step::before{counter-increment:s;content:"0" counter(s);font-family:'Cormorant Garamond';font-size:4.4rem;color:var(--gold);line-height:1;display:block;margin-bottom:14px;font-weight:400}
-.step h3{font-size:1.8rem;margin-bottom:10px}
-.step p{color:var(--muted)}
-@media(max-width:860px){.steps{grid-template-columns:1fr;gap:20px}}
+.steps{list-style:none;max-width:960px;margin-inline:auto;counter-reset:s;border-bottom:1px solid rgba(184,146,79,.4)}
+.step{display:grid;grid-template-columns:110px 1fr;column-gap:30px;row-gap:8px;align-items:start;padding:34px 0;border-top:1px solid rgba(184,146,79,.4)}
+.step::before{grid-row:1/3;counter-increment:s;content:"0" counter(s);font-family:'Cormorant Garamond';font-size:4.4rem;color:var(--gold);line-height:1;font-weight:400}
+.step .h{font:500 1.8rem/1.05 "Cormorant Garamond",Georgia,serif;color:var(--wine-d)}.step>span{color:var(--taupe);grid-column:2;max-width:560px}
+@media(max-width:860px){.step{grid-template-columns:1fr;padding:26px 0}.step::before{grid-row:auto}.step>span{grid-column:1}}
 
 /* team */
 .team-photo{border-radius:var(--r);overflow:hidden;margin-bottom:40px}
 .team-photo img{width:100%;aspect-ratio:850/545;object-fit:cover}
-.members{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
-.members div{padding:28px 20px;border:1px solid rgba(184,146,79,.3);border-radius:var(--r);background:#fff}
-.members h3{font-size:1.7rem}
-.members span{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
-.members p{color:var(--muted);font-size:.95rem;margin-top:10px}
-@media(max-width:800px){.members{grid-template-columns:1fr}}
+.members{list-style:none;max-width:960px;margin-inline:auto;border-bottom:1px solid rgba(184,146,79,.4)}
+.members li{display:grid;grid-template-columns:260px 1fr;column-gap:30px;align-items:baseline;padding:26px 0;border-top:1px solid rgba(184,146,79,.4)}
+.members em{grid-column:1;font-style:normal}.members span{grid-column:2;grid-row:1/3}
+.members .h{font:500 1.7rem/1.05 "Cormorant Garamond",Georgia,serif;color:var(--wine-d)}
+.members em{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.members span{color:var(--taupe);font-size:.95rem}
+@media(max-width:800px){.members li{grid-template-columns:1fr;text-align:center}.members span{grid-column:1;grid-row:auto;margin-top:10px}}
 
 /* reviews */
 .reviews{background:var(--wine-d);color:#f3e4dc}
@@ -227,7 +229,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,245,240,.94);backdro
 /* booking */
 .book{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
 .book h2{margin:16px 0 20px}
-.book > div > p{color:var(--muted);margin-bottom:30px}
+.book > div > p{color:var(--taupe);margin-bottom:30px}
 .info{display:grid;gap:0;border-top:1px solid rgba(107,42,42,.15)}
 .info div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid rgba(107,42,42,.15)}
 .info dt{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;padding-top:3px}
@@ -244,14 +246,14 @@ footer{background:var(--wine-d);color:#cdb3a9;text-align:center;padding:60px 0 4
 footer .logo{font-size:92px;margin-bottom:24px}
 footer a{color:var(--gold-l)}
 
-.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.25)}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center}
 .wa svg{width:30px;height:30px;fill:#fff}
 .r{opacity:0;transform:translateY(24px);transition:.8s ease}
 .r.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none}}
 /* mobile: tudo centralizado */
 @media(max-width:760px){
-.hero .r,.about>.r,.book>.r,.step,.members div{text-align:center}
+.hero .r,.about>.r,.book>.r,.step,.members li{text-align:center}
 .eyebrow{justify-content:center;text-align:center}
 .eyebrow::before{display:none}
 .hero p.lead,.about p{margin-inline:auto}
@@ -346,7 +348,6 @@ footer a{color:var(--gold-l)}
       <h2>Protocolos pensados <em>para você</em></h2>
       <p>Cada tratamento começa com uma avaliação. Assim, indicamos só o que faz sentido para o seu objetivo.</p>
     </div>
-    <div class="tgrid">
       <div class="tcol star r">
         <img src="assets/img/drenagem-linfatica-vila-sonia-protocolo-corporal-850.webp" srcset="assets/img/drenagem-linfatica-vila-sonia-protocolo-corporal-480.webp 480w, assets/img/drenagem-linfatica-vila-sonia-protocolo-corporal-850.webp 850w" sizes="(max-width:960px) min(560px, 100vw - 32px), 375px" width="850" height="850" loading="lazy" decoding="async" alt="Resultado de protocolo corporal">
         <div class="bd">
@@ -361,6 +362,7 @@ footer a{color:var(--gold-l)}
           </ul>
         </div>
       </div>
+    <div class="tgrid">
       <div class="tcol r">
         <img src="assets/img/tratamento-facial-led-vila-sonia-850.webp" srcset="assets/img/tratamento-facial-led-vila-sonia-480.webp 480w, assets/img/tratamento-facial-led-vila-sonia-850.webp 850w" sizes="(max-width:960px) min(560px, 100vw - 32px), 375px" width="850" height="850" loading="lazy" decoding="async" alt="Máscara de LED para tratamento facial">
         <div class="bd">
@@ -416,11 +418,11 @@ footer a{color:var(--gold-l)}
       <span class="eyebrow">Como funciona</span>
       <h2>Sua jornada de <em>autocuidado</em></h2>
     </div>
-    <div class="steps">
-      <div class="step r"><h3>Avaliação</h3><p>Conversamos sobre o que te incomoda e analisamos sua pele e seu corpo antes de indicar qualquer procedimento.</p></div>
-      <div class="step r"><h3>Protocolo sob medida</h3><p>Montamos um plano com as técnicas certas para o seu objetivo, sem excessos e sem procedimentos desnecessários.</p></div>
-      <div class="step r"><h3>Acompanhamento</h3><p>Acompanhamos sua evolução sessão a sessão, ajustando o protocolo para garantir um resultado natural.</p></div>
-    </div>
+    <ol class="steps">
+      <li class="step r"><strong class="h">Avaliação</strong> <span>Conversamos sobre o que te incomoda e analisamos sua pele e seu corpo antes de indicar qualquer procedimento.</span></li>
+      <li class="step r"><strong class="h">Protocolo sob medida</strong> <span>Montamos um plano com as técnicas certas para o seu objetivo, sem excessos e sem procedimentos desnecessários.</span></li>
+      <li class="step r"><strong class="h">Acompanhamento</strong> <span>Acompanhamos sua evolução sessão a sessão, ajustando o protocolo para garantir um resultado natural.</span></li>
+    </ol>
   </div>
 </section>
 
@@ -431,11 +433,11 @@ footer a{color:var(--gold-l)}
       <h2>Profissionais que <em>cuidam de você</em></h2>
     </div>
     <div class="team-photo r"><img src="assets/img/equipe-espaco-janaina-mota-vila-sonia-850.webp" srcset="assets/img/equipe-espaco-janaina-mota-vila-sonia-480.webp 480w, assets/img/equipe-espaco-janaina-mota-vila-sonia-850.webp 850w" sizes="(max-width:1212px) 100vw, 1180px" width="850" height="545" loading="lazy" decoding="async" alt="Equipe do Espaço Janaina Mota"></div>
-    <div class="members">
-      <div class="r"><h3>Janaina Mota</h3><span>Esteticista · Fundadora</span><p>Na estética desde 2018 e referência em drenagem linfática na região.</p></div>
-      <div class="r"><h3>Dra. Bruna Beneti</h3><span>Biomédica Esteta</span><p>Responsável pelos procedimentos injetáveis e enzimas.</p></div>
-      <div class="r"><h3>Naiara Alves</h3><span>Esteticista</span><p>Formada desde 2020, apaixonada por cuidar da beleza e da autoestima feminina.</p></div>
-    </div>
+    <ul class="members">
+      <li class="r"><strong class="h">Janaina Mota</strong><em>Esteticista · Fundadora</em><span>Na estética desde 2018 e referência em drenagem linfática na região.</span></li>
+      <li class="r"><strong class="h">Dra. Bruna Beneti</strong><em>Biomédica Esteta</em><span>Responsável pelos procedimentos injetáveis e enzimas.</span></li>
+      <li class="r"><strong class="h">Naiara Alves</strong><em>Esteticista</em><span>Formada desde 2020, apaixonada por cuidar da beleza e da autoestima feminina.</span></li>
+    </ul>
   </div>
 </section>
 
